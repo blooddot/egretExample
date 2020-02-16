@@ -2,7 +2,7 @@
  * @Author: xianqian 
  * @Date: 2018-12-14 20:07:28 
  * @Last Modified by: 雪糕
- * @Last Modified time: 2020-02-08 20:30:16
+ * @Last Modified time: 2020-02-16 21:31:41
  */
 /**任务队列 */
 class TaskQueue {
@@ -69,7 +69,7 @@ class TaskDelegate implements IPool {
     public callBack: Function;
     public parm: any;
 
-    public onInit(...params: any[]): void {
+    public onInit(...args: any[]): void {
         this.refQueue = null;
         this.callBack = null;
         this.parm = null;

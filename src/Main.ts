@@ -54,13 +54,22 @@ class Main extends egret.DisplayObjectContainer {
         }
 
         this.runGame().catch(e => {
-            console.log(e);
+            logger.error(LOG_TAG.example, e);
         })
     }
 
     private async runGame() {
+        this.init();
         await this.loadResource()
         this.createGameScene();
+    }
+
+    private init() {
+        //框架初始化
+        core.init();
+
+        //游戏实例初始化
+        ex.init(this.stage);
     }
 
     private async loadResource() {
@@ -70,9 +79,8 @@ class Main extends egret.DisplayObjectContainer {
             await RES.loadConfig("resource/default.res.json", "resource/");
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);
-        }
-        catch (e) {
-            console.error(e);
+        } catch (e) {
+            logger.error(LOG_TAG.example, e);
         }
     }
 
@@ -81,12 +89,6 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene() {
-        //框架初始化
-        lanbo.init();
-
-        //游戏实例初始化
-        example.init();
-
-        lanbo.logger.log(LOG_TAG.Test, `游戏启动时间:${new Date(lanbo.time.getStartupTime()).toLocaleDateString()}`);
+        logger.log(LOG_TAG.example, `游戏启动时间:${new Date(time.getStartupTime()).format()}`);
     }
 }

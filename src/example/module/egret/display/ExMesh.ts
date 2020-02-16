@@ -2,10 +2,10 @@
  * @author 雪糕 
  * @desc 
  * @date 2020-02-08 16:22:33 
- * @Last Modified by: 雪糕
- * @Last Modified time: 2020-02-08 16:23:30
+ * @Last Modified by: ??
+ * @Last Modified time: 2020-02-16 23:19:52
  */
-class MeshExample extends BaseExample {
+class ExMesh extends ExBase {
     protected core: egret.Mesh;
 
     public constructor() {
@@ -21,6 +21,16 @@ class MeshExample extends BaseExample {
     }
 
     public onUnInit() {
+
+    }
+
+    protected onShow() {
+        this.core.$setTexture(RES.getRes("egret_icon_png"));
+        ex.moduleOwner.stageCpt.stage.addChild(this.core);
+        this.core.$updateRenderNode();
+    }
+
+    protected onHide() {
 
     }
 }

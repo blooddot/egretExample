@@ -4,7 +4,7 @@
  *          未使用对象池 场景内或者大量的需要使用对象池版本BehaviorPoolComponent
  * @date 2020-02-08 17:34:57 
  * @Last Modified by: 雪糕
- * @Last Modified time: 2020-02-08 21:32:07
+ * @Last Modified time: 2020-02-16 22:12:11
  */
 class BehaviorComponent extends HashObjectExt {
     private _refOwner: BehaviorOwner;//引用的主体
@@ -44,7 +44,7 @@ class BehaviorComponent extends HashObjectExt {
     }
 
     /** 当被添加到母体时触发 */
-    protected onAdd() {
+    protected onAdd(...args: any[]) {
 
     }
 
@@ -69,7 +69,7 @@ class BehaviorComponent extends HashObjectExt {
             return true;
         }
 
-        lanbo.logger.warn(LOG_TAG.FrameWork, `behaviorComponent is destroyed`);
+        logger.warn(LOG_TAG.frameWork, `behaviorComponent is destroyed`);
         return false;
     }
 
@@ -81,9 +81,9 @@ class BehaviorComponent extends HashObjectExt {
     }
 
     /** 业务层不使用 给Owner使用 */
-    public $addToOwner(owner: BehaviorOwner) {
+    public $addToOwner(owner: BehaviorOwner, ...args: any[]) {
         this._refOwner = owner;
         this.enable = true;
-        this.onAdd();
+        this.onAdd(...args);
     }
 }

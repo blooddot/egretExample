@@ -3,7 +3,7 @@
  * @desc 行为组件的宿主
  * @date 2020-02-08 17:37:15 
  * @Last Modified by: 雪糕
- * @Last Modified time: 2020-02-08 17:48:02
+ * @Last Modified time: 2020-02-16 23:05:50
  */
 class BehaviorOwner extends HashObjectExt {
     private _refComponents: BehaviorComponent[] = [];
@@ -31,12 +31,12 @@ class BehaviorOwner extends HashObjectExt {
     }
 
     /** 初始化 Owner需要初始化才能生效 */
-    public init(): boolean {
+    public init(...args: any[]): boolean {
         if (this._inited) {
             return false;
         }
         this._inited = true;
-        this.onInit();
+        this.onInit(...args);
         this.enable = true;
         return true;
     }
@@ -52,7 +52,7 @@ class BehaviorOwner extends HashObjectExt {
         this.destoryAllComponent();
     }
 
-    protected onInit() {
+    protected onInit(...args: any[]) {
 
     }
 
@@ -87,18 +87,18 @@ class BehaviorOwner extends HashObjectExt {
 
     //暂时不提供加载多个同类型组件 都用getAdd替代
     /**母体上添加一个T类型的组件 返回添加的组件*/
-    protected addComponent<T extends BehaviorComponent>(c: new () => T): T {
+    protected addComponent<T extends BehaviorComponent>(c: new () => T, ...args: any[]): T {
         let target: T = null;
 
         //如果是对象池对象则从对象池拿 TODO:实在没办法了  只能这种傻逼写法 支持混淆
         if (RELEASE) {
             if (c.prototype.__types__.indexOf(BehaviorPoolComponent.prototype["__class__"]) >= 0) {
-                target = pool.pop(c as any) as any;
+                target = pool.pop(c as any, ...args) as any;
             }
         }
         else {
             if ("onInit" in c.prototype && "onUnInit" in c.prototype) {
-                target = pool.pop(c as any) as any;
+                target = pool.pop(c as any, ...args) as any;
             }
         }
 
@@ -108,7 +108,7 @@ class BehaviorOwner extends HashObjectExt {
         }
 
         this._refComponents.push(target);
-        target.$addToOwner(this);
+        target.$addToOwner(this, ...args);
         return target;
     }
 
@@ -137,13 +137,13 @@ class BehaviorOwner extends HashObjectExt {
     }
 
     /**一定能获取到某个类型组件 没有就自动添加 */
-    public getAddComponent<T extends BehaviorComponent>(c: new () => T): T {
+    public getAddComponent<T extends BehaviorComponent>(c: new () => T, ...args: any[]): T {
         let target: T = this.getComponent<T>(c);
         if (target) {
             return target;
         }
 
-        return this.addComponent(c);
+        return this.addComponent(c, ...args);
     }
 
     //真实删掉组件

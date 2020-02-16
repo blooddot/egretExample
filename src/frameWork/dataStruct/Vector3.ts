@@ -3,7 +3,7 @@
  * @desc 3维坐标
  * @date 2018-05-11 16:03:57 
  * @Last Modified by: 雪糕
- * @Last Modified time: 2020-02-08 21:32:12
+ * @Last Modified time: 2020-02-16 22:14:50
  */
 class Vector3 {
     static create(x: number = 0, y: number = 0, z: number = 0): Vector3 {
@@ -27,7 +27,7 @@ class Vector3 {
     /**求两个向量距离 */
     public static distance(a: Vector3, b: Vector3): number {
         if (!a || !b) {
-            lanbo.logger.error(LOG_TAG.FrameWork, `Vector3->distance() parm is null a=${a}`);
+            logger.error(LOG_TAG.frameWork, `Vector3->distance() parm is null a=${a}`);
             return 0;
         }
 

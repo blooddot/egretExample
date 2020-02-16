@@ -3,6 +3,8 @@
         "target": "es5",
         "outDir": "bin-debug",
         "experimentalDecorators": true,
+        "removeComments": true,
+        "sourceMap": true,
         "lib": [
             "es5",
             "es6",
