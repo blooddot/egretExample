@@ -7,11 +7,36 @@
 		"libs/modules/assetsmanager/assetsmanager.js",
 		"libs/modules/dragonBones/dragonBones.js",
 		"libs/modules/socket/socket.js",
-		"libs/modules/promise/promise.js"
+		"libs/modules/promise/promise.js",
+		"libs/plugin/websocketworker/WebSocketWorker.js"
 	],
 	"game": [
+		"bin-debug/frameWork/extension/egret/event/EventDispatcherExt.js",
+		"bin-debug/frameWork/extension/egret/utils/HashObjectExt.js",
+		"bin-debug/frameWork/behaviorComponent/BehaviorComponent.js",
+		"bin-debug/frameWork/behaviorComponent/BehaviorOwner.js",
+		"bin-debug/frameWork/dataStruct/BaseModel.js",
+		"bin-debug/frameWork/dataStruct/Dictionary.js",
+		"bin-debug/frameWork/dataStruct/LinkedList.js",
+		"bin-debug/example/moduleComponent/TimeModCpt.js",
 		"bin-debug/LoadingUI.js",
+		"bin-debug/Platform.js",
+		"bin-debug/frameWork/behaviorComponent/BehaviorPoolComponent.js",
+		"bin-debug/example/BaseExample.js",
+		"bin-debug/example/ExampleDefine.js",
 		"bin-debug/Main.js",
-		"bin-debug/Platform.js"
+		"bin-debug/frameWork/dataStruct/PoolDefine.js",
+		"bin-debug/frameWork/dataStruct/TaskQueue.js",
+		"bin-debug/frameWork/dataStruct/Vector2.js",
+		"bin-debug/frameWork/dataStruct/Vector3.js",
+		"bin-debug/frameWork/extension/ECMAScript/Date.js",
+		"bin-debug/example/module/egret/display/MeshExample.js",
+		"bin-debug/example/moduleComponent/ModuleOwner.js",
+		"bin-debug/frameWork/lanbo/LanboDefine.js",
+		"bin-debug/frameWork/lanbo/net/NetDefine.js",
+		"bin-debug/frameWork/lanbo/system/Capabilities.js",
+		"bin-debug/frameWork/lanbo/system/SystemDefine.js",
+		"bin-debug/frameWork/lanbo/util/LocalStorage.js",
+		"bin-debug/frameWork/lanbo/util/Logger.js"
 	]
 }

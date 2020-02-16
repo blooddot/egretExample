@@ -26,6 +26,10 @@
     },
     {
       "name": "promise"
+    },
+    {
+      "name": "WebSocketWorker",
+      "path": "./libs/plugin/websocketworker"
     }
   ]
 }
