@@ -3,7 +3,7 @@
  * @desc 
  * @date 2020-02-08 21:12:22 
  * @Last Modified by: 雪糕
- * @Last Modified time: 2020-02-16 22:06:45
+ * @Last Modified time: 2020-02-27 20:51:43
  */
 namespace LocalStorage {
 	export function setItem(key: string, data: any) {

@@ -1,9 +1,9 @@
 /**
  * @author 雪糕 
- * @desc 
+ * @desc 承载应用程序的系统和运行时相关
  * @date 2020-02-08 20:51:38 
  * @Last Modified by: 雪糕
- * @Last Modified time: 2020-02-16 22:14:17
+ * @Last Modified time: 2020-02-27 20:46:36
  */
 namespace capabilities {
     /** 是否是ipad 只有webview模式下才能用 */

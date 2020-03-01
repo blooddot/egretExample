@@ -3,13 +3,14 @@
  * @desc 日志管理
  * @date 2020-02-08 16:39:55 
  * @Last Modified by: 雪糕
- * @Last Modified time: 2020-02-16 22:27:03
+ * @Last Modified time: 2020-02-27 20:51:48
  */
 const LOG_TAG = {
 	example: "example",
 	net: "net",
 	frameWork: "frameWork",
-	Test: "Test",
+	gui: "gui",
+	asset: "asset",
 }
 
 namespace logger {

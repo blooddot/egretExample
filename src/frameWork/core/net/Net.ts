@@ -1,3 +1,10 @@
+/**
+ * @author 雪糕 
+ * @desc 
+ * @date 2020-02-27 20:46:03 
+ * @Last Modified by: 雪糕
+ * @Last Modified time: 2020-02-27 20:51:00
+ */
 declare var globalManifestJson: any;
 
 namespace net {

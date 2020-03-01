@@ -1,3 +1,10 @@
+/**
+ * @author 雪糕 
+ * @desc 原生Date扩展
+ * @date 2020-02-27 23:34:17 
+ * @Last Modified by 雪糕 
+ * @Last Modified time 2020-02-27 23:34:17 
+ */
 interface Date {
     format(this: Date, needms?: boolean): string;
 }
